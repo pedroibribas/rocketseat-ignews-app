@@ -22,7 +22,7 @@ export default function Home({ products }: HomeProps) { //export default é obri
     <>
       {/* === Cabeçalho HTML dinâmico === */}
       <Head>
-        <title>ig.news</title>
+        <title>Home | Ignews</title>
       </Head>
       {/* === Corpo da página === */}
       {/*o componente <Header/> está em _app.tsx*/}
@@ -45,10 +45,13 @@ export default function Home({ products }: HomeProps) { //export default é obri
   )
 };
 
-//=> A função nativa do Next.js GetServerSideProps faz chamadas API no server-side (e não no client-side) e recebe os dados obtidos para serem usados no front-end como props do componente React.
+/*
+
+//=> A função nativa do Next.js GetServerSideProps faz chamadas API no server-side (e não no client-side) e recebe os dados obtidos para serem usados no front-end como props do componente React. Essa metodologia mantém a sigilosidade dos dados.
 //=> Esta função só funciona se exportada de uma página.
 //=> Esta função deve ser sempre assíncrona.
 //=> ref: https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
+
 export const getServerSideProps: GetServerSideProps = async () => {
   // === [...código lido no server-side] ===
 
@@ -65,6 +68,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: { product } // retornar React props
   };
 };
+
+*/
 
 //=> A função nativa GetStaticProps tem a mesma finalidade que a função GetServerSideProps, mas salva uma versão estática da página em HTML (Server Site Generation). Assim a construção da página não ocorre em cada requisição do client-side.
 //=> O GetStaticProps é útil para otimizar a geração de páginas com informações destinadas a todos os usuários, e não dinâmicas.
